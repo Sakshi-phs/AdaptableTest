@@ -1,0 +1,17 @@
+@import 'dna-font';
+@import 'platform-fonts';
+
+@include AddPlatformFonts();
+
+.header {
+  font-family: $danda-font-family-default;
+  display: flex;
+  padding-top: 5px;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  margin: 10px;
+  button {
+    height: 30px;
+  }
+}

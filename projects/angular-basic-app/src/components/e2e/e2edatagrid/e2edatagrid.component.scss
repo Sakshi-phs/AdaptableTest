@@ -1,0 +1,44 @@
+@import 'essentials';
+
+:host {
+  .wrapper {
+    margin: 20px;
+    .row {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 100%;
+
+      .column {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+      }
+
+      .column > div {
+        line-height: 20px;
+      }
+    }
+  }
+
+  .grid-item {
+    height: 100%;
+    @include themify($themes) {
+      border-right: 1px solid themed('sidebarSeparator');
+    }
+  }
+
+  .tag-wrapper {
+    flex-flow: column wrap;
+    margin-top: 10px;
+
+    .tag {
+      margin: 10px;
+      padding: 5px 20px 4px 20px;
+      border-radius: 20%;
+      @include themify($themes) {
+        background-color: themed('chipsBackground');
+      }
+    }
+  }
+}

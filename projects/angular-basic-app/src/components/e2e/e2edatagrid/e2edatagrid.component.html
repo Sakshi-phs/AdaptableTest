@@ -1,0 +1,62 @@
+<insights-data-grid
+  [data]="data"
+  [isFetching]="isFetching"
+  [hasError]="hasError"
+  [loadDataErrorMessage]="loadDataErrorMessage"
+  [emptyDataErrorMessage]="emptyDataErrorMessage"
+  [defaultView]="defaultView"
+  (fetchMoreData)="fetchMoreData()"
+>
+  <ng-template insightsGridHeader> </ng-template>
+  <ng-template insightsGridListViewItem let-item="item">
+    <div class="wrapper">
+      <div class="row">
+        <div class="column">
+          <div>
+            <b>{{ item.name }}</b>
+          </div>
+          <span>
+            <img src="./assets/images/bnym_logo_horiz_black_rgb.png" width="150" height="50" />
+          </span>
+        </div>
+        <div class="column">
+          <div>
+            <p>
+              {{ item.description }}
+            </p>
+          </div>
+          <div class="tag-wrapper">
+            <span *ngFor="let tag of item.tags" class="tag">
+              {{ tag }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template insightsGridViewItem let-item="item">
+    <div class="grid-item">
+      <div>
+        <div>
+          <b>{{ item.name }}</b>
+        </div>
+        <span>
+          <img src="./assets/images/bnym_logo_horiz_black_rgb.png" width="150" height="50" />
+        </span>
+      </div>
+      <div>
+        <div>
+          <p>
+            {{ item.description }}
+          </p>
+        </div>
+        <div class="tag-wrapper">
+          <span *ngFor="let tag of item.tags" class="tag">
+            {{ tag }}
+          </span>
+        </div>
+      </div>
+      <div class="separator"></div>
+    </div>
+  </ng-template>
+</insights-data-grid>

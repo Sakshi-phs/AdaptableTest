@@ -1,0 +1,10 @@
+{
+  "include": ["projects/angular-basic-app/src/**/*.ts"],
+  "exclude": ["node_modules/**/*.*", "@angular/**/*.*", "**/*.d.ts", "rum.js"],
+  "extension": [".ts"],
+  "require": ["ts-node/register"],
+  "reporter": ["html", "text-summary", "lcov"],
+  "sourceMap": false,
+  "instrument": true,
+  "all": true
+}

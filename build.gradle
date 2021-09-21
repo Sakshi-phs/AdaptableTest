@@ -1,0 +1,20 @@
+//********************************************
+//* Using Gradle Script Plugin
+//********************************************
+buildscript {
+
+    //********************************************
+    //* Add Properties for Plugin
+    //********************************************
+    repositories {
+        mavenLocal()
+        maven {
+            url "${ARTIFACTORY_BASE_URL}/maven-virtual/"
+        }
+    }
+    dependencies {
+        classpath "com.eagleinvsys.gradle:eagle-script-ui:${eagleGradlePlugin}"
+    }
+
+}
+apply from: project.buildscript.classLoader.getResource("gradle/root.gradle").toURI()

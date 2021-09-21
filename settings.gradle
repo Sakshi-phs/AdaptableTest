@@ -1,0 +1,12 @@
+rootProject.name = rootProjectName
+
+buildCache {
+  local {
+    enabled = false
+  }
+  remote(HttpBuildCache) {
+    enabled = true
+    url = "https://artifactory.engops.az.eagleinvsys.com/artifactory/gradle-buildcache-local/"
+    push = true
+  }
+}

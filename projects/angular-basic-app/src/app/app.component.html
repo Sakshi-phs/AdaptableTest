@@ -1,0 +1,6 @@
+<div class="header">
+  <danda-logo></danda-logo>
+  <danda-button *ngIf="authenticated" appearance="link-secondary" (click)="onLogoutClick()">Logout</danda-button>
+</div>
+<router-outlet></router-outlet>
+<insights-logout-dialog></insights-logout-dialog>

@@ -1,0 +1,9 @@
+{
+  "**/*.scss": ["stylelint --fix", "prettier --write"],
+  ".storybook/**/*.{ts,js}": ["npm run lint:storybook", "prettier --write"],
+  "projects/angular-basic-app/**/*.ts": ["npm run lint:app", "prettier --write"],
+  "scripts/**/*.{ts,js}": ["npm run lint:scripts", "prettier --write"],
+  "specs/**/*.ts": ["npm run lint:e2e", "prettier --write"],
+  "package-lock.json": "npm run check:versions",
+  "*.{css,html,json,md,js}": "prettier --write"
+}

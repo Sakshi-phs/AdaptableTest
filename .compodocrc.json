@@ -1,0 +1,10 @@
+{
+  "$schema": "./node_modules/@compodoc/compodoc/src/config/schema.json",
+  "tsconfig": "./projects/angular-basic-app/tsconfig.app.json",
+  "disableCoverage": true,
+  "hideGenerator": true,
+  "name": "Angular Basic Documentation",
+  "output": "./dist/docs",
+  "theme": "readthedocs",
+  "port": 9002
+}

@@ -1,0 +1,30 @@
+<div class="wrapper">
+  <h1 class="heading-01">Angular Basic Template: e2e Test Page</h1>
+
+  <danda-form-field-group class="search-libraries-field">
+    <danda-multi-select
+      (selectedItemsValuesChange)="onLibrarySelected($event)"
+      [items]="libOptions"
+      placeholder="Favorite Platform Libs"
+      data-e2e-id="search-libraries"
+      slot="field"
+    ></danda-multi-select>
+  </danda-form-field-group>
+
+  <div class="data-grid">
+    <danda-button appearance="primary" data-e2e-id="generate-data" (click)="onGenerateData()">Generate Data</danda-button>
+    <danda-button appearance="primary" data-e2e-id="generate-error" (click)="onGenerateError()">Generate Error</danda-button>
+    <danda-button appearance="primary" data-e2e-id="generate-no-data" (click)="onGenerateNoData()">Generate No Data</danda-button>
+    <danda-button appearance="primary" data-e2e-id="navigate-protected" routerLink="/protected" routerLinkActive="active">
+      Goto Protected Page
+    </danda-button>
+    <e2e-data-grid
+      [isFetching]="isFetching"
+      [hasError]="hasError"
+      [loadDataErrorMessage]="loadDataErrorMessage"
+      [emptyDataErrorMessage]="emptyDataErrorMessage"
+      [data]="gridData"
+      [defaultView]="defaultView"
+    ></e2e-data-grid>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+---
+compose_template: ce_ui_svc_upu
+business_line: angular-basic
+stackType: UI_JAVASCRIPT
+url_prefix:
+  - angular-basic
+name: angular-basic
+artifact_name: ui-angular-basic
+git_repo_name: ce-git-template-angular-basic
+port: 80
+sonarqube:
+  sonar.exclusions: '**/**.d.ts,projects/**/**.html,projects/**/**.scss,projects/**/mocks/**,projects/**/scripts/**,projects/**/*.mocks.ts,projects/**/*.stories.ts,projects/**/constants/**/*.ts,projects/**/models/**/*.ts,projects/angular-basic-app/**/testing/*.ts,projects/angular-basic-app/src/assets/scripts/app-index.js,projects/angular-basic-app/src/test/**/**,projects/angular-basic-app/src/app/storybook-only/**/**,projects/angular-basic-app/src/main.ts,projects/angular-basic-app/src/environments/**/*.ts,projects/angular-basic-app/src/app/app.module.ts,projects/angular-basic-app/src/app/app-routing.module.ts,projects/angular-basic-app/src/polyfills.ts'
+vault:
+  version: 2
+e2e:
+  e2eVaultVersion: v2

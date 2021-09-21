@@ -1,0 +1,13 @@
+@import 'dna-typography';
+
+:host {
+  font-family: $danda-font-family-default;
+  @include typography-class('heading', 1);
+
+  .wrapper {
+    padding: 20px;
+    button {
+      margin: 20px 0;
+    }
+  }
+}

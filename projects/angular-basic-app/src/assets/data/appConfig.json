@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../@ce/config-lib/libs/schemas/eagle-app-config.schema.json",
+  "apiPrefix": "api",
+  "appName": "angular-basic",
+  "baseDomain": "{BASE_DOMAIN}",
+  "useSSL": "{USE_SSL}",
+  "sessionBaseDomain": null,
+  "newrelic": {
+    "key": "{NR_KEY}",
+    "appId": "{NR_APP_ID}"
+  },
+  "services": [
+    {
+      "id": "svc-insights",
+      "apiPrefixOverride": null,
+      "baseDomainOverride": null,
+      "baseApiPath": "/svc-insights"
+    }
+  ]
+}

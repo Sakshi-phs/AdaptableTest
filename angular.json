@@ -1,0 +1,237 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "angular-basic-app": {
+      "schematics": {},
+      "root": "projects/angular-basic-app",
+      "sourceRoot": "projects/angular-basic-app/src",
+      "projectType": "application",
+      "architect": {
+        "build": {
+          "builder": "ngx-build-plus:build",
+          "options": {
+            "outputPath": "dist/angular-basic-app",
+            "index": "projects/angular-basic-app/src/index.html",
+            "main": "projects/angular-basic-app/src/main.ts",
+            "tsConfig": "projects/angular-basic-app/tsconfig.app.json",
+            "polyfills": "projects/angular-basic-app/src/polyfills.ts",
+            "baseHref": "/angular-basic/",
+            "assets": [
+              "projects/angular-basic-app/src/assets",
+              "projects/angular-basic-app/src/favicon.ico",
+              "projects/angular-basic-app/src/manifest.json",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/@ce/platform-lib/src/lib/assets/",
+                "output": "/assets/"
+              }
+            ],
+            "styles": [
+              "node_modules/font-awesome/css/font-awesome.css",
+              "node_modules/primeng/resources/primeng.css",
+              "node_modules/primeicons/primeicons.css",
+              "node_modules/@ce/platform-lib/src/lib/styles/platform-lib.scss",
+              "projects/angular-basic-app/src/styles/main.scss"
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "node_modules/@ce/platform-lib/src/lib/styles",
+                "node_modules/@ce/platform-lib/src/lib/styles/utils",
+                "node_modules/@ce/design-lib/lib/scss",
+                "node_modules/@ce/design-lib/lib/scss/tokens",
+                "node_modules/@ce/design-lib/lib/scss/components",
+                "projects/angular-basic-app/src/styles"
+              ]
+            }
+          },
+          "configurations": {
+            "dev": {
+              "aot": false,
+              "optimization": false,
+              "buildOptimizer": false,
+              "outputHashing": "all",
+              "sourceMap": true,
+              "statsJson": true,
+              "extractCss": true,
+              "extractLicenses": false,
+              "namedChunks": true,
+              "vendorChunk": false,
+              "fileReplacements": [
+                {
+                  "replace": "projects/angular-basic-app/src/environments/environment.ts",
+                  "with": "projects/angular-basic-app/src/environments/environment.dev.ts"
+                }
+              ]
+            },
+            "dev-optimized": {
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "fileReplacements": [
+                {
+                  "replace": "projects/angular-basic-app/src/environments/environment.ts",
+                  "with": "projects/angular-basic-app/src/environments/environment.dev.ts"
+                }
+              ]
+            },
+            "production": {
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "fileReplacements": [
+                {
+                  "replace": "projects/angular-basic-app/src/environments/environment.ts",
+                  "with": "projects/angular-basic-app/src/environments/environment.prod.ts"
+                }
+              ]
+            },
+            "docker": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/angular-basic-app/src/environments/environment.ts",
+                  "with": "projects/angular-basic-app/src/environments/environment.docker.ts"
+                }
+              ]
+            },
+            "local": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/angular-basic-app/src/environments/environment.ts",
+                  "with": "projects/angular-basic-app/src/environments/environment.local.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "ngx-build-plus:dev-server",
+          "options": {
+            "browserTarget": "angular-basic-app:build"
+          },
+          "configurations": {
+            "dev": {
+              "browserTarget": "angular-basic-app:build:dev",
+              "host": "local.dev.az.eagleinvsys.com",
+              "ssl": true,
+              "sslKey": "./local-ssl/localhost.key",
+              "sslCert": "./local-ssl/localhost.crt",
+              "baseHref": "/angular-basic/"
+            },
+            "dev-optimized": {
+              "browserTarget": "angular-basic-app:build:dev-optimized"
+            },
+            "production": {
+              "browserTarget": "angular-basic-app:build:production"
+            },
+            "docker": {
+              "browserTarget": "angular-basic-app:build:docker"
+            },
+            "local": {
+              "browserTarget": "angular-basic-app:build:local",
+              "host": "local.dev.az.eagleinvsys.com",
+              "ssl": true,
+              "sslKey": "./local-ssl/localhost.key",
+              "sslCert": "./local-ssl/localhost.crt",
+              "baseHref": "/angular-basic/"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "angular-basic:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/angular-basic-app/src/test/test.ts",
+            "karmaConfig": "projects/angular-basic-app/karma.conf.ts",
+            "polyfills": "projects/angular-basic-app/src/polyfills.ts",
+            "tsConfig": "projects/angular-basic-app/tsconfig.spec.json",
+            "sourceMap": true,
+            "assets": [
+              "projects/angular-basic-app/src/assets",
+              "projects/angular-basic-app/src/favicon.ico",
+              "projects/angular-basic-app/src/manifest.json"
+            ],
+            "styles": [
+              "node_modules/font-awesome/css/font-awesome.css",
+              "node_modules/primeng/resources/primeng.css",
+              "node_modules/primeicons/primeicons.css",
+              "node_modules/@ce/platform-lib/src/lib/styles/platform-lib.scss",
+              "projects/angular-basic-app/src/styles/main.scss"
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "node_modules/@ce/platform-lib/src/lib/styles",
+                "node_modules/@ce/platform-lib/src/lib/styles/utils",
+                "node_modules/@ce/design-lib/lib/scss",
+                "node_modules/@ce/design-lib/lib/scss/tokens",
+                "node_modules/@ce/design-lib/lib/scss/components",
+                "projects/angular-basic-app/src/styles"
+              ]
+            }
+          },
+          "styles": [
+            "node_modules/font-awesome/css/font-awesome.css",
+            "node_modules/primeng/resources/primeng.css",
+            "node_modules/primeicons/primeicons.css",
+            "projects/angular-basic-app/src/styles/main.scss"
+          ],
+          "assets": [
+            "projects/angular-basic-app/src/assets",
+            "projects/angular-basic-app/src/favicon.ico",
+            {
+              "glob": "**/*",
+              "input": "node_modules/ce-component-ui/assets",
+              "output": "projects/angular-basic-app/assets"
+            },
+            "projects/angular-basic-app/src/manifest.json"
+          ]
+        }
+      }
+    },
+    "angular-basic-e2e": {
+      "root": "e2e",
+      "sourceRoot": "e2e",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "./specs/protractor.conf.js",
+            "devServerTarget": "angular-basic:serve"
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "angular-basic-app",
+  "schematics": {
+    "@schematics/angular:class": {
+      "skipTests": true
+    },
+    "@schematics/angular:component": {
+      "prefix": "app",
+      "style": "css"
+    },
+    "@schematics/angular:directive": {
+      "prefix": "app"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+# vendor provided code
+
+# generated dirs and files
+/results/
+/out-tsc/
+/reports/
+/specs/results/
+/dist/
+/.vscode/
+/build/
+/browsers.json
+/selenoid-logging.json
+/package-lock.json
+/package.json

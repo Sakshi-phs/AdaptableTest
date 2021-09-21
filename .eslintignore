@@ -1,0 +1,11 @@
+# generated files
+/out-tsc/**
+/node-modules/**
+/reports/**
+/results/**
+/specs/results/**
+/dist/**
+/build/**
+
+# included hidden folders
+!/.storybook
